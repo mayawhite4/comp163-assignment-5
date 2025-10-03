@@ -4,14 +4,17 @@ step = 0
 #The loop for outputting the sequence and the amount of steps taken as well as the starting number 
 print(f"=== Challenge 1: Collatz Conjecture ===")
 current_number = int(input("Enter starting number: Sequence: "))
-while current_number > 1:
+print(current_number, end=" ")
+while (current_number != 1):
     if current_number % 2 == 0:
-        print(f"{current_number:.0f}", end=" ")
         current_number = current_number / 2
-        step += 1
     else:
-        print(f"{current_number:.0f}", end=" ")
         current_number = (current_number * 3) + 1
+    
+    if current_number == 1:
+        print(f"{current_number:.0f}")
         step += 1
-
-print("\nSteps:", step)
+        break
+    print(f"{current_number:.0f}", end=" ")
+    step += 1
+print("Steps:", step)
