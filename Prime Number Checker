@@ -1,0 +1,35 @@
+# The variables usesd for sequencing
+step = 0
+#The print out for the Collatz Conjecture challenege 
+#The loop for outputting the sequence and the amount of steps taken as well as the starting number 
+print(f"=== Challenge 1: Collatz Conjecture ===")
+current_number = int(input("Enter starting number: Sequence: "))
+print(current_number, end=" ")
+while (current_number != 1):
+    if current_number % 2 == 0:
+        current_number = current_number / 2
+    else:
+        current_number = (current_number * 3) + 1
+    
+    if current_number == 1:
+        print(f"{current_number:.0f}")
+        step += 1
+        break
+    print(f"{current_number:.0f}", end=" ")
+    step += 1
+print("Steps:", step)
+
+#Loop for the prime number checker
+#As well as the code for the output
+print(f"\n=== Challenge 2: Prime Number Checker ===")
+is_it_prime = int(input("Enter a number: Testing divisors from"))
+while is_it_prime > 1:
+    print(f" {is_it_prime - (is_it_prime - 2)} to {is_it_prime - 1}...")
+    for i in range(2, is_it_prime):
+        if (is_it_prime % i) == 0:
+            print(f"{is_it_prime:.0f} is not prime!")
+            break
+        else:
+            continue
+    print(f"{is_it_prime} is prime!")
+    break
